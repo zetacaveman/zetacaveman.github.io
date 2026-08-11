@@ -1,0 +1,297 @@
+:root {
+  --canvas: #e9e5dc;
+  --paper: #f8f6f0;
+  --text: #253035;
+  --muted: #687176;
+  --line: #d7d1c5;
+  --link: #315f78;
+  --accent: #425d66;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--canvas);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+::selection {
+  color: var(--text);
+  background: #d9e1dd;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.page {
+  width: min(960px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 28px auto;
+  padding: 0 54px;
+  border: 1px solid rgba(70, 77, 77, 0.12);
+  border-top: 3px solid var(--accent);
+  background: var(--paper);
+  box-shadow: 0 12px 36px rgba(48, 49, 45, 0.08);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+nav a {
+  color: var(--muted);
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--text);
+}
+
+.intro {
+  padding: 76px 0 64px;
+}
+
+.intro-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 188px;
+  gap: 52px;
+  align-items: start;
+}
+
+.intro-text > p:first-child {
+  margin-top: 0;
+}
+
+.portrait {
+  margin: 0;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 4px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 62px);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+h1::after {
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-top: 20px;
+  content: "";
+  background: var(--accent);
+}
+
+.subtitle {
+  margin: 14px 0 36px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.links {
+  display: flex;
+  gap: 9px;
+  margin-top: 26px;
+  font-size: 14px;
+}
+
+section:not(.intro) {
+  padding: 46px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 20px;
+}
+
+h2 {
+  margin: 0 0 28px;
+  font-size: 28px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.two-column-item {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 24px;
+  padding: 12px 0;
+}
+
+.two-column-item p {
+  margin: 0;
+}
+
+.publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication-list > li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.publication-list > li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.year {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+}
+
+.authors,
+.venue,
+.paper-links {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.venue {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.paper-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+footer {
+  padding: 28px 0 44px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  body {
+    background: var(--paper);
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    box-shadow: none;
+  }
+
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  .intro {
+    padding: 54px 0 50px;
+  }
+
+  .intro-body {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .portrait {
+    order: -1;
+    width: 156px;
+  }
+
+  .two-column-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .publication-list > li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media print {
+  body,
+  .page {
+    background: #fff;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+}
